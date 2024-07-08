@@ -22,6 +22,8 @@ class Point{
     Point& operator--();
     Point& operator--(T);
 
+    Point operator=(const Point& other);
+
 };
 
 template<typename T>
@@ -78,6 +80,18 @@ Point<T>& Point<T>::operator--(T){
   x--;
   y--;
   z--;
+  return *this;
+}
+
+template<typename T>
+Point<T> Point<T>::operator=(const Point<T>& other){
+  // check for self assignemnt : http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html
+  if(this == &other){
+    return *this;
+  }
+  this->x = other.x;
+  this->y = other.y;
+  this->z = other.z;
   return *this;
 }
 

@@ -29,6 +29,7 @@ create a library to perform operations on points (2D/3D). yup. that's it. nothin
 - [] subtract two or more points
 - [] distance between two points
 
+
 ## References
 
 1. [why template classes def and implementation can't be seperated](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)
