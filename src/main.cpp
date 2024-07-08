@@ -2,17 +2,11 @@
 #include "inc/point.h"
 
 int main(){
-  Point<int> p(1,23);
-  Point<int> q;
+  Point<int> p(1,2,3);
+  Point<int> q(2,3,4);
+  p.Print();
+  p-=q;
 
-  q = p++;
-  q.Print();
-  
-  Point<int> r(13,4,5);
-  std::cout << "before" << std::endl;
-  r.Print();
-  r = q;
-  std::cout << "after" << std::endl;
-  r.Print();
+  p.Print();
   return 0;
 }
