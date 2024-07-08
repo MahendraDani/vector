@@ -28,8 +28,7 @@ create a library to perform operations on points (2D/3D). yup. that's it. nothin
 - [x] compound assignment operators(-=, +=) operator overloadin
 - [x] addition operator overloading : add two or more points
 - [x] subratction operator overloading: subtract two or more points
-- [] distance between two points
-
+- [x] distance between two points - friend functions
 
 ## References
 

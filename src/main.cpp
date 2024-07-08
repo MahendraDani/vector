@@ -2,11 +2,10 @@
 #include "inc/point.h"
 
 int main(){
-  Point<int> p(1,2,3);
-  Point<int> q(2,3,4);
-  Point<int> r(10,3,1111);
+  Point<int> p1(1,1,3);
+  Point<int> p2(1,3,15);
 
-  Point<int> ans = p -r -q;
-  ans.Print();
+  double ans = Distance<int>(p1,p2);
+  std::cout << "distance: " << ans << std::endl;
   return 0;
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include<cmath>
+
 template<typename T>
 class Point{
   private:
@@ -29,6 +31,9 @@ class Point{
     
     const Point<T> operator+(const Point<T>& other) const;
     const Point<T> operator-(const Point<T>& other) const;
+
+    template<typename U>
+    friend double Distance(const Point<U>& p1,const Point<U>& p2);
 
 };
 
@@ -131,6 +136,12 @@ const Point<T> Point<T>::operator-(const Point<T>& other) const{
   result.y = y - other.y;
   result.z = z - other.z;
   return result;
+}
+
+template<typename U>
+double Distance(const Point<U>& p1, const Point<U>& p2){
+  double ans = (double)std::sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) + (p1.z-p2.z)*(p1.z-p2.z));
+  return ans;
 }
 
 template<typename T>
