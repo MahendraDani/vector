@@ -11,20 +11,24 @@ class Point{
     Point();
     Point(T x, T y);
     Point(T x, T y, T z);
-    Point(Point& other);
+    Point(const Point& other);
     
     void Print();
 
     // overloaded operators
-    Point& operator++();
-    Point& operator++(T);
+    Point<T>& operator++();
+    Point<T>& operator++(T);
 
-    Point& operator--();
-    Point& operator--(T);
+    Point<T>& operator--();
+    Point<T>& operator--(T);
 
-    Point& operator=(const Point& other);
-    Point& operator+=(const Point& other);
-    Point& operator-=(const Point& other);
+    Point<T>& operator=(const Point<T>& other);
+
+    Point<T>& operator+=(const Point<T>& other);
+    Point<T>& operator-=(const Point<T>& other);
+    
+    const Point<T> operator+(const Point<T>& other) const;
+    const Point<T> operator-(const Point<T>& other) const;
 
 };
 
@@ -46,7 +50,7 @@ Point<T>::Point(T x, T y, T z){
 }
 
 template<typename T>
-Point<T>::Point(Point& other){
+Point<T>::Point(const Point& other){
   this->x = other.x;
   this->y = other.y;
   this->z = other.z;
@@ -91,26 +95,42 @@ Point<T>& Point<T>::operator=(const Point<T>& other){
   if(this == &other){
     return *this;
   }
-  this->x = other.x;
-  this->y = other.y;
-  this->z = other.z;
+  x = other.x;
+  y = other.y;
+  z = other.z;
   return *this;
 }
 
 template<typename T>
 Point<T>& Point<T>::operator+=(const Point<T>& other){
-  this->x +=other.x;
-  this->y +=other.y;
-  this->z +=other.z;
+  x +=other.x;
+  y +=other.y;
+  z +=other.z;
   return *this;
 }
 
 template<typename T>
 Point<T>& Point<T>::operator-=(const Point<T>& other){
-  this->x -= other.x;
-  this->y -= other.y;
-  this->z -= other.z;
+  x -= other.x;
+  y -= other.y;
+  z -= other.z;
   return *this;
+}
+
+template<typename T>
+const Point<T> Point<T>::operator+(const Point<T>& other) const{
+  Point<T> result(other);
+  result += other;
+  return result;
+}
+
+template<typename T>
+const Point<T> Point<T>::operator-(const Point<T>& other) const{
+  Point<T> result(other);
+  result.x = x - other.x;
+  result.y = y - other.y;
+  result.z = z - other.z;
+  return result;
 }
 
 template<typename T>

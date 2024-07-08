@@ -25,8 +25,9 @@ create a library to perform operations on points (2D/3D). yup. that's it. nothin
 - [x] create 2D/3D templae points class of type int, bytes, float, double
 - [x] default,parametarized and copy constructors
 - [x] pre and post increment operator overloading
-- [] add two or more points
-- [] subtract two or more points
+- [x] compound assignment operators(-=, +=) operator overloadin
+- [x] addition operator overloading : add two or more points
+- [x] subratction operator overloading: subtract two or more points
 - [] distance between two points
 
 
