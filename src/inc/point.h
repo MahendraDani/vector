@@ -15,6 +15,13 @@ class Point{
     
     void Print();
 
+    // overloaded operators
+    Point& operator++();
+    Point& operator++(T);
+
+    Point& operator--();
+    Point& operator--(T);
+
 };
 
 template<typename T>
@@ -39,6 +46,39 @@ Point<T>::Point(Point& other){
   this->x = other.x;
   this->y = other.y;
   this->z = other.z;
+}
+
+// NOTE : pre and post increment/decrement operators will increment all the coordinates, use it carefully for 2D points!
+template<typename T>
+Point<T>& Point<T>::operator++(){
+  ++x;
+  ++y;
+  ++z;
+  return *this;
+}
+
+template<typename T>
+Point<T>& Point<T>::operator++(T){
+  x++;
+  y++;
+  z++;
+  return *this;
+}
+
+template<typename T>
+Point<T>& Point<T>::operator--(){
+  --x;
+  --y;
+  --z;
+  return *this;
+}
+
+template<typename T>
+Point<T>& Point<T>::operator--(T){
+  x--;
+  y--;
+  z--;
+  return *this;
 }
 
 template<typename T>
