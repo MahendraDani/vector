@@ -235,6 +235,8 @@ Vector<U> CrossProduct(const Vector<U>& p1, const Vector<U>& p2){
   crossProduct.z = p1.x*p2.y - p1.y*p2.x;
   return crossProduct;
 }
+
 template<typename T>
 void Vector<T>::Print(){
-  std::cout << "(" << x << "," << y << "," << z << ")" << "\n";}
+  std::cout << "(" << x << "," << y << "," << z << ")" << "\n";
+}

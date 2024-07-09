@@ -1,2 +1,6 @@
-src/main.o
 .vscode
+
+# exec files
+src/main.o
+src/examples/**/main.o
+
