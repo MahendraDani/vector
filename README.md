@@ -29,6 +29,12 @@ create a library to perform operations on points (2D/3D). yup. that's it. nothin
 - [x] addition operator overloading : add two or more points
 - [x] subratction operator overloading: subtract two or more points
 - [x] distance between two points - friend functions
+- [ ] compound assignment operator(*=) overloading
+- [ ] multiplication operator overloading
+- [x] magnitude of a vector
+- [ ] dot product and cross product
+- [ ] vectors
+- [ ] cout and cin operator overloading
 
 ## References
 

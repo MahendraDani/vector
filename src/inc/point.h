@@ -15,8 +15,6 @@ class Point{
     Point(T x, T y, T z);
     Point(const Point& other);
     
-    void Print();
-
     // overloaded operators
     Point<T>& operator++();
     Point<T>& operator++(T);
@@ -35,6 +33,12 @@ class Point{
     template<typename U>
     friend double Distance(const Point<U>& p1,const Point<U>& p2);
 
+    void Print();
+    T GetX();
+    T GetY();
+    T GetZ();
+
+    double Magnitude();
 };
 
 template<typename T>
@@ -142,6 +146,26 @@ template<typename U>
 double Distance(const Point<U>& p1, const Point<U>& p2){
   double ans = (double)std::sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) + (p1.z-p2.z)*(p1.z-p2.z));
   return ans;
+}
+
+template<typename T>
+T Point<T>::GetX(){
+  return x;
+}
+
+template<typename T>
+T Point<T>::GetY(){
+  return y;
+}
+
+template<typename T>
+T Point<T>::GetZ(){
+  return z;
+}
+
+template<typename T>
+double Point<T>::Magnitude(){
+  return (double)std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
 }
 
 template<typename T>
