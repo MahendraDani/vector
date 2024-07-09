@@ -35,8 +35,8 @@ create a library to perform operations on Vectors (2D/3D). yup. that's it. nothi
 - [x] dot product
 - [x] cross product
 - [x] cout and cin operator overloading
-- [ ] create a src/examples directory for examlples showcasing usage of the library
 - [x] update readme with usage examples (add references wherever needed)
+- [ ] create a src/examples directory for examlples showcasing usage of the library
 - [ ] add tests for all methods
 
 ## References
