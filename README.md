@@ -32,7 +32,7 @@ create a library to perform operations on points (2D/3D). yup. that's it. nothin
 - [x] compound assignment operator(\*=) overloading
 - [x] multiplication operator overloading
 - [x] magnitude of a vector
-- [ ] dot product
+- [x] dot product
 - [ ] cross product
 - [x] cout and cin operator overloading
 

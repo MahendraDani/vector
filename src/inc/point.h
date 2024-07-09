@@ -42,12 +42,16 @@ class Point{
     template<typename U>
     friend std::istream& operator>>(std::istream& out, Point<U>& p);
 
-    void Print();
+    // class methods
+    void Print(); // NOTE: i recommend using cout instead of Print method
+
     T GetX();
     T GetY();
     T GetZ();
 
     double Magnitude();
+    template<typename U>
+    friend double DotProduct(const Point<U>& p1, const Point<U>& p2);
 };
 
 template<typename T>
@@ -213,6 +217,13 @@ template<typename T>
 double Point<T>::Magnitude(){
   return (double)std::sqrt(std::pow(x,2) + std::pow(y,2) + std::pow(z,2));
 }
+
+template<typename U>
+double DotProduct(const Point<U>&p1, const Point<U>& p2){
+  Point<U> temp = p1*p2;
+  return (double)(temp.x + temp.y + temp.z);
+}
+
 
 template<typename T>
 void Point<T>::Print(){
