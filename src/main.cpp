@@ -3,6 +3,8 @@
 
 int main(){
   Point<int> p(1,2,3);
-  std::cout << p.Magnitude() << std::endl;
+  Point<int> q(2,3,4);
+  Point<int> r = p*q;
+  r.Print();
   return 0;
 }

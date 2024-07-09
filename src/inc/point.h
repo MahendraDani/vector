@@ -26,9 +26,11 @@ class Point{
 
     Point<T>& operator+=(const Point<T>& other);
     Point<T>& operator-=(const Point<T>& other);
+    Point<T>& operator*=(const Point<T>& other);
     
     const Point<T> operator+(const Point<T>& other) const;
     const Point<T> operator-(const Point<T>& other) const;
+    const Point<T> operator*(const Point<T>& other) const;
 
     template<typename U>
     friend double Distance(const Point<U>& p1,const Point<U>& p2);
@@ -127,9 +129,19 @@ Point<T>& Point<T>::operator-=(const Point<T>& other){
 }
 
 template<typename T>
+Point<T>& Point<T>::operator*=(const Point<T>& other){
+  x *= other.x;
+  y *= other.y;
+  z *= other.z;
+  return *this;
+}
+
+template<typename T>
 const Point<T> Point<T>::operator+(const Point<T>& other) const{
   Point<T> result(other);
-  result += other;
+  result.x = x + other.x;
+  result.y = y + other.y;
+  result.z = z + other.z;
   return result;
 }
 
@@ -139,6 +151,15 @@ const Point<T> Point<T>::operator-(const Point<T>& other) const{
   result.x = x - other.x;
   result.y = y - other.y;
   result.z = z - other.z;
+  return result;
+}
+
+template<typename T>
+const Point<T> Point<T>::operator*(const Point<T>& other) const {
+  Point<T> result(other);
+  result.x = x * other.x;
+  result.y = y * other.y;
+  result.z = z * other.z;
   return result;
 }
 
