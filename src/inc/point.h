@@ -1,6 +1,7 @@
 #pragma once
 
 #include<cmath>
+#include<iostream>
 
 template<typename T>
 class Point{
@@ -34,6 +35,12 @@ class Point{
 
     template<typename U>
     friend double Distance(const Point<U>& p1,const Point<U>& p2);
+
+    template<typename U>
+    friend std::ostream& operator<<(std::ostream& out, const Point<U>& p);
+
+    template<typename U>
+    friend std::istream& operator>>(std::istream& out, Point<U>& p);
 
     void Print();
     T GetX();
@@ -167,6 +174,24 @@ template<typename U>
 double Distance(const Point<U>& p1, const Point<U>& p2){
   double ans = (double)std::sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) + (p1.z-p2.z)*(p1.z-p2.z));
   return ans;
+}
+
+template<typename U>
+std::ostream& operator<<(std::ostream& out, const Point<U>& p) {
+    out << "(" << p.x << "," << p.y << "," << p.z << ")";
+    out<< "\n";
+    return out;
+}
+
+template<typename U>
+std::istream& operator>>(std::istream& in, Point<U>& p){
+  std::cout << "x: ";
+  in >> p.x;
+  std::cout << "y: ";
+  in >> p.y;
+  std::cout << "z: ";
+  in >> p.z;
+    return in;
 }
 
 template<typename T>
