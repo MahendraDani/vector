@@ -50,8 +50,12 @@ class Point{
     T GetZ();
 
     double Magnitude();
+
     template<typename U>
     friend double DotProduct(const Point<U>& p1, const Point<U>& p2);
+
+    template<typename U>
+    friend Point<U> CrossProduct(const Point<U>& p1, const Point<U>& p2);
 };
 
 template<typename T>
@@ -183,7 +187,6 @@ double Distance(const Point<U>& p1, const Point<U>& p2){
 template<typename U>
 std::ostream& operator<<(std::ostream& out, const Point<U>& p) {
     out << "(" << p.x << "," << p.y << "," << p.z << ")";
-    out<< "\n";
     return out;
 }
 
@@ -224,7 +227,14 @@ double DotProduct(const Point<U>&p1, const Point<U>& p2){
   return (double)(temp.x + temp.y + temp.z);
 }
 
-
+template<typename U>
+Point<U> CrossProduct(const Point<U>& p1, const Point<U>& p2){
+  Point<U> crossProduct;
+  crossProduct.x = p1.y*p2.z - p1.z*p2.y;
+  crossProduct.y = -(p1.x*p2.z -p1.z*p2.x);
+  crossProduct.z = p1.x*p2.y - p1.y*p2.x;
+  return crossProduct;
+}
 template<typename T>
 void Point<T>::Print(){
   std::cout << "(" << x << "," << y << "," << z << ")" << "\n";}

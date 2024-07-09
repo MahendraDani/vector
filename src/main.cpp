@@ -2,9 +2,13 @@
 #include "inc/point.h"
 
 int main(){
-  Point<int> p(-2,3,5);
-  Point<int> q(1,2,3);
+  Point<int> p(5,6,2);
+  Point<int> q(1,1,1);
 
-  std::cout << DotProduct(p,q);
+  Point<int> r = CrossProduct(p,q);
+
+  std::cout << r << std::endl;
+  std::cout << r.Magnitude() << std::endl;
+
   return 0;
 }

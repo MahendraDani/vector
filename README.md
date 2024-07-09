@@ -33,7 +33,7 @@ create a library to perform operations on points (2D/3D). yup. that's it. nothin
 - [x] multiplication operator overloading
 - [x] magnitude of a vector
 - [x] dot product
-- [ ] cross product
+- [x] cross product
 - [x] cout and cin operator overloading
 
 ## References
